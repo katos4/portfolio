@@ -12,7 +12,7 @@ mongoose.connect('mongodb://localhost:27017/portfolio')
             console.log('Conexion a la base de datos establecida');
 
             //crear servidor https
-            https.createServer(
+           /* https.createServer(
                 {
                 key: fs.readFileSync('privkey.pem'),
                 cert: fs.readFileSync('cert.pem'),
@@ -20,11 +20,11 @@ mongoose.connect('mongodb://localhost:27017/portfolio')
                 app
             ).listen(port, () => {
                 console.log('Servidor HTTPs corriendo en: localhost:3700');
-            });
-            // Creacion del servidor http normal
-           /* app.listen(port, () => {
-                console.log('Servidor HTTP corriendo en: localhost:3700');
             });*/
+            // Creacion del servidor http normal
+            app.listen(port, () => {
+                console.log('Servidor HTTP corriendo en: localhost:3700');
+            });
 
         })
         .catch(err => {
